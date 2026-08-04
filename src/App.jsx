@@ -25,12 +25,11 @@ const form = useRef();
 const sendEmail = (e) => {
   e.preventDefault();
 
-  emailjs
-    .sendForm(
-  "service_cdmds88",
-  "YOUR_TEMPLATE_ID",
+  emailjs.sendForm(
+  "service_zv169hr",
+  "template_6j0vps8",
   form.current,
-  "YOUR_PUBLIC_KEY"
+  "efJiytaXGcSkPc9Qu"
 )
     .then(() => {
       alert("Message sent successfully!");
@@ -183,16 +182,22 @@ let number = 0;
           </li>
 
           <li>
-            <a href="#projects" onClick={()=>setMenuOpen(false)}>
-              Projects
-            </a>
-          </li>
+  <a href="#projects" onClick={()=>setMenuOpen(false)}>
+    Projects
+  </a>
+</li>
 
-          <li>
-            <a href="#contact" onClick={()=>setMenuOpen(false)}>
-              Contact
-            </a>
-          </li>
+<li>
+  <a href="#testimonials" onClick={()=>setMenuOpen(false)}>
+    Testimonials
+  </a>
+</li>
+
+<li>
+  <a href="#contact" onClick={()=>setMenuOpen(false)}>
+    Contact
+  </a>
+</li>
 
 
         </ul>
@@ -415,19 +420,87 @@ let number = 0;
 
 
         <p>
-          Hi, I'm <strong>Sahil Raza</strong>, a Graphic & Motion Graphic
-          Designer specializing in branding, product advertisements,
-          social media creatives and motion graphics. I create modern,
-          professional and eye-catching designs that help businesses
-          stand out.
-        </p>
+  Hi, I'm <strong>Sahil Raza</strong>, a passionate Graphic & Motion Graphic Designer
+  with experience in creating professional branding, social media creatives,
+  product advertisements, motion graphics and promotional videos.
+</p>
+
+<div className="about-boxes">
+
+  <div className="about-card">
+    <h3>🎨 Graphic Design</h3>
+    <p>Creative posters, banners, flyers and branding designs.</p>
+  </div>
+
+  <div className="about-card">
+    <h3>🎬 Motion Graphics</h3>
+    <p>Professional logo animation, reels and promotional videos.</p>
+  </div>
+
+  <div className="about-card">
+    <h3>🚀 Product Ads</h3>
+    <p>Eye-catching advertisements for brands and social media.</p>
+  </div>
+
+</div>
 
 
       </section>
 
+<section className="timeline">
 
+  <h2>My Journey</h2>
 
+  <div className="timeline-box">
 
+    <div className="timeline-item">
+      <h3>2025</h3>
+      <p>Started learning Graphic Design.</p>
+    </div>
+
+    <div className="timeline-item">
+      <h3>2026</h3>
+      <p>Started Motion Graphics & Product Advertisement.</p>
+    </div>
+
+    <div className="timeline-item">
+      <h3>Present</h3>
+      <p>Working as a Freelance Graphic & Motion Graphic Designer.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="whyhire">
+
+  <h2>Why Hire Me?</h2>
+
+  <div className="whyhire-box">
+
+    <div className="why-card">
+      <h3>🎨 Creative Design</h3>
+      <p>I create modern, unique and eye-catching designs for every project.</p>
+    </div>
+
+    <div className="why-card">
+      <h3>⚡ Fast Delivery</h3>
+      <p>Projects are completed on time without compromising quality.</p>
+    </div>
+
+    <div className="why-card">
+      <h3>🎯 Attention to Detail</h3>
+      <p>Every design is carefully crafted with precision and creativity.</p>
+    </div>
+
+    <div className="why-card">
+      <h3>🤝 Client Satisfaction</h3>
+      <p>My priority is delivering designs that exceed client expectations.</p>
+    </div>
+
+  </div>
+
+</section>
       {/* Services */}
 
       <section ref={(el)=>sectionRefs.current[2]=el} id="services">
@@ -476,11 +549,84 @@ let number = 0;
 
         </div>
 
+</section>
 
-      </section>
-            {/* Projects */}
+{/* Certificates */}
 
-      <section ref={(el)=>sectionRefs.current[3]=el} id="projects">
+<section id="certificates">
+
+  <h2>My Certificates</h2>
+
+  <div className="certificates">
+
+    <div className="certificate-card">
+      <h3>Graphic Design</h3>
+      <p>Arena Animation</p>
+    </div>
+
+    <div className="certificate-card">
+      <h3>Motion Graphics</h3>
+      <p>Adobe After Effects Training</p>
+    </div>
+
+    <div className="certificate-card">
+      <h3>Adobe Photoshop</h3>
+      <p>Professional Certification</p>
+    </div>
+
+  </div>
+
+</section>
+{/* Testimonials */}
+
+<section id="testimonials">
+
+  <h2>Client Testimonials</h2>
+
+  <div className="testimonials">
+
+    <div className="testimonial-card">
+      <p>
+        ⭐⭐⭐⭐⭐
+      </p>
+
+      <h3>Amit Kumar</h3>
+
+      <p>
+        Amazing work! Delivered on time with excellent quality.
+      </p>
+    </div>
+
+    <div className="testimonial-card">
+      <p>
+        ⭐⭐⭐⭐⭐
+      </p>
+
+      <h3>Rohit Singh</h3>
+
+      <p>
+        Very creative designer. Highly recommended.
+      </p>
+    </div>
+
+    <div className="testimonial-card">
+      <p>
+        ⭐⭐⭐⭐⭐
+      </p>
+
+      <h3>Priya Sharma</h3>
+
+      <p>
+        Professional product advertisements and motion graphics.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+{/* Projects */}
+
+<section ref={(el)=>sectionRefs.current[3]=el} id="projects">
 
         <h2>My Projects</h2>
 
@@ -490,34 +636,36 @@ let number = 0;
 
           <div className="card">
 
-            <img 
-              src={nike}
-              alt="Nike Poster"
-              onClick={()=>setSelectedImage(nike)}
-            />
+  <span className="project-tag">Product Ad</span>
 
-            <h3>Nike Advertisement</h3>
+  <img
+    src={nike}
+    alt="Nike Poster"
+    onClick={() => setSelectedImage(nike)}
+  />
 
-            <p>
-              Creative sports product advertisement design.
-            </p>
+  <h3>Nike Advertisement</h3>
 
-            <a 
-            href={nike}
-            target="_blank"
-            rel="noopener noreferrer"
-            >
-              <button>
-                View Project
-              </button>
-            </a>
+  <p>
+    Creative sports product advertisement design.
+  </p>
 
-          </div>
+  <a
+    href={nike}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <button>
+      View Project
+    </button>
+  </a>
+
+</div>
 
 
 
           <div className="card">
-
+<span className="project-tag">Social Media</span>
             <img 
               src={pizza}
               alt="Pizza Poster"
@@ -545,7 +693,7 @@ let number = 0;
 
 
           <div className="card">
-
+<span className="project-tag">Branding</span>
             <img 
               src={coffee}
               alt="Coffee Poster"
@@ -573,7 +721,7 @@ let number = 0;
 
 
           <div className="card">
-
+<span className="project-tag">Branding</span>
             <img 
               src={perfume}
               alt="Perfume Poster"
@@ -631,7 +779,41 @@ let number = 0;
 
 
 
+{/* Testimonials */}
 
+<section id="testimonials">
+
+  <h2>What Clients Say</h2>
+
+  <div className="testimonial-container">
+
+    <div className="testimonial-card">
+      <p>
+        "Excellent design quality and fast delivery. Highly recommended!"
+      </p>
+      <h4>⭐⭐⭐⭐⭐</h4>
+      <span>— Client</span>
+    </div>
+
+    <div className="testimonial-card">
+      <p>
+        "Professional motion graphics with amazing creativity."
+      </p>
+      <h4>⭐⭐⭐⭐⭐</h4>
+      <span>— Customer</span>
+    </div>
+
+    <div className="testimonial-card">
+      <p>
+        "Very satisfied with the product advertisement design."
+      </p>
+      <h4>⭐⭐⭐⭐⭐</h4>
+      <span>— Brand Owner</span>
+    </div>
+
+  </div>
+
+</section>
       {/* Contact */}
 
 
@@ -743,13 +925,11 @@ let number = 0;
 
       <footer>
 
-  <p>
-    © 2026 Sahil Raza | Graphic & Motion Graphic Designer
-  </p>
+  <p>© 2026 Sahil Raza. All Rights Reserved.</p>
+
+  <p>Designed & Developed by Sahil Raza</p>
 
 </footer>
-
-
 
 </div>
 

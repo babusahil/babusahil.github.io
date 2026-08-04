@@ -178,6 +178,24 @@ body{
   object-position:center 20%;
   border:5px solid #00d9ff;
   margin-bottom:25px;
+  transition:.4s;
+  animation:profileFloat 4s ease-in-out infinite;
+}
+
+@keyframes profileFloat{
+
+  0%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-12px);
+  }
+
+  100%{
+    transform:translateY(0);
+  }
+
 }
 
 
@@ -225,8 +243,10 @@ button{
 }
 
 button:hover{
-  background:white;
-  transform:translateY(-5px);
+  background:#00d9ff;
+  color:#000;
+  transform:translateY(-5px) scale(1.05);
+  box-shadow:0 10px 25px rgba(0,217,255,.4);
 }
 
 
@@ -323,8 +343,90 @@ section h2{
   height:100%;
   background:#00d9ff;
 }
+.about-boxes{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+  margin-top:40px;
+}
 
+.about-card{
+  width:300px;
+  padding:25px;
+  border-radius:20px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.15);
+  transition:.35s ease;
+}
 
+.about-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 15px 35px rgba(0,217,255,.35);
+}
+
+.about-card{
+  width:300px;
+  padding:25px;
+  border-radius:20px;
+  background:linear-gradient(145deg,#1e293b,#111827);
+  border:1px solid rgba(0,217,255,.25);
+  transition:.35s ease;
+}
+
+.about-card h3{
+  color:#00d9ff;
+  margin-bottom:15px;
+}
+
+.about-card p{
+  color:#d1d5db;
+  line-height:1.7;
+}
+
+#about p{
+  max-width:900px;
+  margin:0 auto;
+  text-align:center;
+  line-height:1.8;
+  font-size:18px;
+  color:#d1d5db;
+}
+/* =========================
+   CERTIFICATES
+========================= */
+
+.certificates{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:30px;
+  margin-top:40px;
+}
+
+.certificate-card{
+  width:300px;
+  padding:25px;
+  border-radius:20px;
+  background:linear-gradient(145deg,#1e293b,#111827);
+  border:1px solid rgba(0,217,255,.25);
+  transition:.35s ease;
+}
+
+.certificate-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 15px 35px rgba(0,217,255,.35);
+}
+
+.certificate-card h3{
+  color:#00d9ff;
+  margin-bottom:15px;
+}
+
+.certificate-card p{
+  color:#d1d5db;
+  line-height:1.7;
+}
 /* =========================
    SERVICES
 ========================= */
@@ -348,7 +450,14 @@ section h2{
   color:#00d9ff;
   margin-bottom:15px;
 }
+.service-card{
+  transition:.35s;
+}
 
+.service-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 15px 30px rgba(0,217,255,.25);
+}
 
 /* =========================
    PROJECTS
@@ -386,7 +495,22 @@ section h2{
 }/* =========================
    IMAGE POPUP
 ========================= */
+.card{
+  transition:.35s ease;
+}
 
+.card:hover{
+  transform:translateY(-12px) scale(1.03);
+  box-shadow:0 15px 35px rgba(0,217,255,.35);
+}
+
+.card img{
+  transition:.35s ease;
+}
+
+.card:hover img{
+  transform:scale(1.08);
+}
 .image-popup{
   position:fixed;
   top:0;
@@ -451,7 +575,17 @@ section h2{
   width:220px;
   margin:auto;
 }
+.contact-form input:focus,
+.contact-form textarea:focus{
+  outline:none;
+  border:1px solid #00d9ff;
+  box-shadow:0 0 15px rgba(0,217,255,.35);
+}
 
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+  color:#cbd5e1;
+}
 
 /* =========================
    WHATSAPP
@@ -935,4 +1069,222 @@ button{
 .app.light h3,
 .app.light p{
   color:#111827;
+}/* =========================
+   TIMELINE
+========================= */
+
+.timeline{
+  padding:80px 20px;
+}
+
+.timeline-box{
+  max-width:800px;
+  margin:50px auto;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.timeline-item{
+  width:220px;
+  padding:25px;
+  border-radius:20px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(0,217,255,.25);
+  transition:.35s ease;
+}
+
+.timeline-item:hover{
+  transform:translateY(-10px);
+  box-shadow:0 15px 35px rgba(0,217,255,.35);
+}
+
+.timeline-item h3{
+  color:#00d9ff;
+  margin-bottom:15px;
+}
+
+.timeline-item p{
+  color:#d1d5db;
+  line-height:1.7;
+}/* =========================
+   WHY HIRE ME
+========================= */
+
+.whyhire-box{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:30px;
+  margin-top:40px;
+}
+
+.why-card{
+  width:280px;
+  padding:30px 25px;
+  border-radius:20px;
+  background:linear-gradient(145deg,#1e293b,#111827);
+  border:1px solid rgba(0,217,255,.25);
+  transition:.35s ease;
+}
+
+.why-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 15px 35px rgba(0,217,255,.35);
+}
+
+.why-card h3{
+  color:#00d9ff;
+  margin-bottom:15px;
+}
+
+.why-card p{
+  color:#d1d5db;
+  line-height:1.7;
+}/* =========================
+   PROJECT TAG
+========================= */
+
+.project-tag{
+  position:absolute;
+  top:15px;
+  left:15px;
+  background:#00d9ff;
+  color:#0f172a;
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:13px;
+  font-weight:bold;
+  z-index:5;
+  box-shadow:0 5px 15px rgba(0,217,255,.35);
+}
+
+.card{
+  position:relative;
+}/* =========================
+   PREMIUM PROJECT EFFECT
+========================= */
+
+.card{
+  overflow:hidden;
+}
+
+.card img{
+  transition:0.5s ease;
+}
+
+.card:hover img{
+  transform:scale(1.08);
+  filter:brightness(0.85);
+}
+
+.card button{
+  transition:.3s ease;
+}
+
+.card:hover button{
+  background:#ffffff;
+  color:#0f172a;
+  transform:scale(1.05);
+}
+
+.card:hover{
+  border:1px solid #00d9ff;
+  box-shadow:0 15px 40px rgba(0,217,255,.35);
+}/* =========================
+   TESTIMONIALS
+========================= */
+
+.testimonial-container{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:30px;
+  margin-top:40px;
+}
+
+.testimonial-card{
+  width:320px;
+  padding:30px;
+  border-radius:20px;
+  background:linear-gradient(145deg,#1e293b,#111827);
+  border:1px solid rgba(0,217,255,.25);
+  transition:.35s ease;
+}
+
+.testimonial-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 15px 35px rgba(0,217,255,.35);
+}
+
+.testimonial-card p{
+  color:#d1d5db;
+  line-height:1.8;
+  font-style:italic;
+}
+
+.testimonial-card h4{
+  color:#FFD700;
+  margin:20px 0 10px;
+  font-size:20px;
+}
+
+.testimonial-card span{
+  color:#00d9ff;
+  font-weight:bold;
+}/* =========================
+   Testimonials Section
+========================= */
+
+#testimonials{
+  padding:80px 10%;
+  text-align:center;
+}
+
+
+#testimonials h2{
+  font-size:35px;
+  margin-bottom:40px;
+}
+
+
+.testimonial-container{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+
+.testimonial-card{
+  width:300px;
+  padding:30px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(0,217,255,0.3);
+  transition:0.4s;
+}
+
+
+.testimonial-card:hover{
+  transform:translateY(-10px);
+}
+
+
+.testimonial-card p{
+  line-height:1.6;
+  font-size:16px;
+}
+
+
+.testimonial-card h4{
+  margin:15px 0;
+  font-size:20px;
+}
+
+
+.testimonial-card span{
+  opacity:0.8;
 }
