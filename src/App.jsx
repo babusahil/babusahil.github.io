@@ -18,6 +18,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [loading, setLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [filter, setFilter] = useState("All");
   const [count, setCount] = useState(0);
 const sectionRefs = useRef([]);
 const form = useRef();
@@ -352,9 +353,9 @@ let number = 0;
         <div className="skill-box">
 
           <div className="skill-title">
-            <span>Adobe Photoshop</span>
-            <span>95%</span>
-          </div>
+  <span>Adobe Photoshop</span>
+  <span>95%</span>
+</div>
 
           <div className="progress">
             <span style={{width:"95%"}}></span>
@@ -629,29 +630,91 @@ let number = 0;
 <section ref={(el)=>sectionRefs.current[3]=el} id="projects">
 
         <h2>My Projects</h2>
+<div className="project-filter">
 
+  <button
+    className={filter === "All" ? "active" : ""}
+    onClick={() => setFilter("All")}
+  >
+    All
+  </button>
+
+  <button
+    className={filter === "Product Ads" ? "active" : ""}
+    onClick={() => setFilter("Product Ads")}
+  >
+    Product Ads
+  </button>
+
+  <button
+    className={filter === "Social Media" ? "active" : ""}
+    onClick={() => setFilter("Social Media")}
+  >
+    Social Media
+  </button>
+
+  <button
+    className={filter === "Branding" ? "active" : ""}
+    onClick={() => setFilter("Branding")}
+  >
+    Branding
+  </button>
+
+</div>
 
         <div className="projects">
 
+  {(filter === "All" || filter === "Product Ads") && (
+    <div className="card">
 
-          <div className="card">
+      <span className="project-tag">Product Ads</span>
 
-  <span className="project-tag">Product Ad</span>
+      <img
+        src={nike}
+        alt="Nike Poster"
+        onClick={() => setSelectedImage(nike)}
+      />
+
+      <h3>Nike Advertisement</h3>
+
+      <p>
+        Creative sports product advertisement design.
+      </p>
+
+      <a
+        href={nike}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <button>
+          View Project
+        </button>
+      </a>
+
+    </div>
+  )}
+
+
+
+          {(filter === "All" || filter === "Social Media") && (
+<div className="card">
+
+  <span className="project-tag">Social Media</span>
 
   <img
-    src={nike}
-    alt="Nike Poster"
-    onClick={() => setSelectedImage(nike)}
+    src={pizza}
+    alt="Pizza Poster"
+    onClick={() => setSelectedImage(pizza)}
   />
 
-  <h3>Nike Advertisement</h3>
+  <h3>Pizza Advertisement</h3>
 
   <p>
-    Creative sports product advertisement design.
+    Restaurant promotion for social media marketing.
   </p>
 
   <a
-    href={nike}
+    href={pizza}
     target="_blank"
     rel="noopener noreferrer"
   >
@@ -661,91 +724,66 @@ let number = 0;
   </a>
 
 </div>
+)}
+          {(filter === "All" || filter === "Branding") && (
+<div className="card">
 
+  <span className="project-tag">Branding</span>
 
+  <img
+    src={coffee}
+    alt="Coffee Poster"
+    onClick={() => setSelectedImage(coffee)}
+  />
 
-          <div className="card">
-<span className="project-tag">Social Media</span>
-            <img 
-              src={pizza}
-              alt="Pizza Poster"
-              onClick={()=>setSelectedImage(pizza)}
-            />
+  <h3>Coffee Advertisement</h3>
 
-            <h3>Pizza Advertisement</h3>
+  <p>
+    Modern coffee brand promotional campaign.
+  </p>
 
-            <p>
-              Restaurant promotion for social media marketing.
-            </p>
+  <a
+    href={coffee}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <button>
+      View Project
+    </button>
+  </a>
 
-            <a 
-            href={pizza}
-            target="_blank"
-            rel="noopener noreferrer"
-            >
-              <button>
-                View Project
-              </button>
-            </a>
+</div>
+)}
 
-          </div>
+          {(filter === "All" || filter === "Branding") && (
+<div className="card">
 
+  <span className="project-tag">Branding</span>
 
+  <img
+    src={perfume}
+    alt="Perfume Poster"
+    onClick={() => setSelectedImage(perfume)}
+  />
 
-          <div className="card">
-<span className="project-tag">Branding</span>
-            <img 
-              src={coffee}
-              alt="Coffee Poster"
-              onClick={()=>setSelectedImage(coffee)}
-            />
+  <h3>Perfume Advertisement</h3>
 
-            <h3>Coffee Advertisement</h3>
+  <p>
+    Luxury perfume advertising poster design.
+  </p>
 
-            <p>
-              Modern coffee brand promotional campaign.
-            </p>
+  <a
+    href={perfume}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <button>
+      View Project
+    </button>
+  </a>
 
-            <a 
-            href={coffee}
-            target="_blank"
-            rel="noopener noreferrer"
-            >
-              <button>
-                View Project
-              </button>
-            </a>
-
-          </div>
-
-
-
-          <div className="card">
-<span className="project-tag">Branding</span>
-            <img 
-              src={perfume}
-              alt="Perfume Poster"
-              onClick={()=>setSelectedImage(perfume)}
-            />
-
-            <h3>Perfume Advertisement</h3>
-
-            <p>
-              Luxury perfume advertising poster design.
-            </p>
-
-            <a 
-            href={perfume}
-            target="_blank"
-            rel="noopener noreferrer"
-            >
-              <button>
-                View Project
-              </button>
-            </a>
-
-          </div>
-
+</div>
+)}
 
         </div>
 
@@ -923,11 +961,57 @@ let number = 0;
 
 
 
-      <footer>
+      <footer className="footer">
 
-  <p>© 2026 Sahil Raza. All Rights Reserved.</p>
+  <div className="footer-content">
 
-  <p>Designed & Developed by Sahil Raza</p>
+    <h3>Sahil Raza</h3>
+
+    <p>Graphic & Motion Graphic Designer</p>
+
+    <p>📍 Ranchi, Jharkhand, India</p>
+
+    <p>📞 +91 7701847962</p>
+
+    <p>✉️ motiongraphicdesigner6@gmail.com</p>
+
+  </div>
+<div className="footer-social">
+
+  <a
+    href="https://www.instagram.com/official_designer_sahil/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <FaInstagram />
+  </a>
+
+  <a
+    href="https://www.linkedin.com/in/sahil-raza-863a40408"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <FaLinkedin />
+  </a>
+
+  <a
+    href="https://www.fiverr.com/mdsahilraza"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <SiFiverr />
+  </a>
+
+</div>
+  <hr />
+
+  <p className="copyright">
+    © 2026 Sahil Raza. All Rights Reserved.
+  </p>
+
+  <p className="made">
+    ❤️ Designed & Developed by Sahil Raza
+  </p>
 
 </footer>
 
