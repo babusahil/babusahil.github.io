@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://heartfelt-youtiao-1bce0c.netlify.app/sitemap.xml

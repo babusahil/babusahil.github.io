@@ -133,163 +133,167 @@ useEffect(() => {
   return (
     <div className="app">
 
-      {/* =========================
-          NAVBAR
-      ========================= */}
+        {/* =========================
+      NAVBAR
+  ========================= */}
 
-      <nav className="navbar">
+  <nav className="navbar">
 
-        <h2 className="logo">Sahil Raza</h2>
+    <h2 className="logo">Sahil Raza</h2>
 
-        
+    <div
+      className="menu-btn"
+      onClick={() => setMenuOpen(!menuOpen)}
+    >
+      {menuOpen ? "✕" : "☰"}
+    </div>
 
-        <div
-          className="menu-btn"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          {menuOpen ? "✕" : "☰"}
-        </div>
+    <ul className={menuOpen ? "nav-links active" : "nav-links"}>
 
-        <ul className={menuOpen ? "nav-links active" : "nav-links"}>
+      <li>
+        <a href="#home" onClick={() => setMenuOpen(false)}>
+          Home
+        </a>
+      </li>
 
-          <li>
-            <a href="#home" onClick={() => setMenuOpen(false)}>
-              Home
-            </a>
-          </li>
+      <li>
+        <a href="#about" onClick={() => setMenuOpen(false)}>
+          About
+        </a>
+      </li>
 
-          <li>
-            <a href="#about" onClick={() => setMenuOpen(false)}>
-              About
-            </a>
-          </li>
+      <li>
+        <a href="#skills" onClick={() => setMenuOpen(false)}>
+          Skills
+        </a>
+      </li>
 
-          <li>
-            <a href="#skills" onClick={() => setMenuOpen(false)}>
-              Skills
-            </a>
-          </li>
+      <li>
+        <a href="#services" onClick={() => setMenuOpen(false)}>
+          Services
+        </a>
+      </li>
 
-          <li>
-            <a href="#services" onClick={() => setMenuOpen(false)}>
-              Services
-            </a>
-          </li>
+      <li>
+        <a href="#projects" onClick={() => setMenuOpen(false)}>
+          Projects
+        </a>
+      </li>
 
-          <li>
-            <a href="#projects" onClick={() => setMenuOpen(false)}>
-              Projects
-            </a>
-          </li>
-
-          <li>
-            <a href="#contact" onClick={() => setMenuOpen(false)}>
-              Contact
-            </a>
-          </li>
+      <li>
+        <a href="#contact" onClick={() => setMenuOpen(false)}>
+          Contact
+        </a>
+      </li>
 
         </ul>
-      </nav>
 
+  </nav>
 
-      {/* =========================
-          HERO
-      ========================= */}
+  <main>
 
-      <section id="home" className="hero">
+    {/* =========================
+        HERO
+    ========================= */}
 
-        <div className="bg-circle bg1"></div>
-        <div className="bg-circle bg2"></div>
-        <div className="bg-circle bg3"></div>
+    <section id="home" className="hero">
 
-        <div className="hero-bg"></div>
+      <div className="bg-circle bg1"></div>
+      <div className="bg-circle bg2"></div>
+      <div className="bg-circle bg3"></div>
 
-        <img
-          src={sahil}
-          alt="Sahil Raza"
-          className="profile"
+      <div className="hero-bg"></div>
+
+      <img
+        src={sahil}
+        alt="Sahil Raza"
+        className="profile"
+      />
+
+      <h1>
+        Creative <span>Graphic</span> &{" "}
+        <span>Motion</span> Designer
+      </h1>
+
+      <h2 className="typing">
+        <TypeAnimation
+          sequence={[
+            "Graphic Designer",
+            2000,
+            "Motion Graphic Designer",
+            2000,
+            "Product Advertisement Designer",
+            2000,
+          ]}
+          wrapper="span"
+          speed={50}
+          repeat={Infinity}
         />
+      </h2>
 
-        <h1>
-          Creative <span>Graphic</span> &{" "}
-          <span>Motion</span> Designer
-        </h1>
+      <p>
+        I create modern graphic designs, product advertisements,
+        branding, social media creatives and engaging motion graphics
+        using Adobe Creative Suite.
+      </p>
 
-        <h2 className="typing">
-          <TypeAnimation
-            sequence={[
-              "Graphic Designer",
-              2000,
-              "Motion Graphic Designer",
-              2000,
-              "Product Advertisement Designer",
-              2000,
-            ]}
-            wrapper="span"
-            speed={50}
-            repeat={Infinity}
-          />
-        </h2>
+      <div className="buttons">
 
-        <p>
-          I create modern graphic designs, product advertisements,
-          branding, social media creatives and engaging motion graphics
-          using Adobe Creative Suite.
-        </p>
+        <a href="#projects">
+          <button type="button">
+            View My Work
+          </button>
+        </a>
 
-        <div className="buttons">
+        <a href="#contact">
+          <button type="button">
+            Hire Me
+          </button>
+        </a>
 
-  <a href="#projects">
-    <button type="button">
-      View My Work
-    </button>
-  </a>
+        <a
+          href="/sahilresum.pdf"
+          download="Sahil-Raza-Resume.pdf"
+        >
+          <button type="button">
+            Download Resume
+          </button>
+        </a>
 
-  <a href="#contact">
-    <button type="button">
-      Hire Me
-    </button>
-  </a>
+      </div>
 
-  <a
-    href="/sahilresum.pdf"
-    download="Sahil-Raza-Resume.pdf"
-  >
-    <button type="button">
-      Download Resume
-    </button>
-  </a>
+      <div className="social-links">
 
-</div>
-        <div className="social-links">
+        <a
+          href="https://www.instagram.com/official_designer_sahil/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
+          <FaInstagram aria-hidden="true" />
+        </a>
 
-          <a
-            href="https://www.instagram.com/official_designer_sahil/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaInstagram />
-          </a>
+        <a
+          href="https://www.linkedin.com/in/sahil-raza-863a40408"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+          <FaLinkedin aria-hidden="true" />
+        </a>
 
-          <a
-            href="https://www.linkedin.com/in/sahil-raza-863a40408"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedin />
-          </a>
+        <a
+          href="https://www.fiverr.com/mdsahilraza"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Fiverr"
+        >
+          <SiFiverr aria-hidden="true" />
+        </a>
 
-          <a
-            href="https://www.fiverr.com/mdsahilraza"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <SiFiverr />
-          </a>
+      </div>
 
-        </div>
-
-      </section>
+    </section>
 
 
       {/* =========================
@@ -554,7 +558,7 @@ useEffect(() => {
 
       <p>⭐⭐⭐⭐⭐</p>
 
-      <h4>Amit Kumar</h4>
+      <h3>Amit Kumar</h3>
 
       <p>
         Amazing work! Delivered on time with excellent quality.
@@ -857,28 +861,31 @@ useEffect(() => {
         <div className="social-links">
 
           <a
-            href="https://www.instagram.com/official_designer_sahil/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaInstagram />
-          </a>
+  href="https://www.instagram.com/official_designer_sahil/"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Instagram"
+>
+  <FaInstagram aria-hidden="true" />
+</a>
 
           <a
-            href="https://www.linkedin.com/in/sahil-raza-863a40408"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedin />
-          </a>
+  href="https://www.linkedin.com/in/sahil-raza-863a40408"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="LinkedIn"
+>
+  <FaLinkedin aria-hidden="true" />
+</a>
 
           <a
-            href="https://www.fiverr.com/mdsahilraza"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <SiFiverr />
-          </a>
+  href="https://www.fiverr.com/mdsahilraza"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Fiverr"
+>
+  <SiFiverr aria-hidden="true" />
+</a>
 
         </div>
 
@@ -901,67 +908,73 @@ useEffect(() => {
 
 
       {/* =========================
-          FOOTER
-      ========================= */}
+    FOOTER
+========================= */}
 
-      <footer className="footer">
+<footer className="footer">
 
-        <div className="footer-content">
+  <div className="footer-content">
 
-          <h3>Sahil Raza</h3>
+    <h3>Sahil Raza</h3>
 
-          <p>Graphic & Motion Graphic Designer</p>
+    <p>Graphic & Motion Graphic Designer</p>
 
-          <p>📍 Ranchi, Jharkhand, India</p>
+    <p>📍 Ranchi, Jharkhand, India</p>
 
-          <p>📞 +91 7701847962</p>
+    <p>📞 +91 7701847962</p>
 
-          <p>✉️ motiongraphicdesigner6@gmail.com</p>
+    <p>✉️ motiongraphicdesigner6@gmail.com</p>
 
-          <div className="footer-social">
+    <div className="footer-social">
 
-            <a
-              href="https://www.instagram.com/official_designer_sahil/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagram />
-            </a>
+      <a
+        href="https://www.instagram.com/official_designer_sahil/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+      >
+        <FaInstagram aria-hidden="true" />
+      </a>
 
-            <a
-              href="https://www.linkedin.com/in/sahil-raza-863a40408"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedin />
-            </a>
+      <a
+        href="https://www.linkedin.com/in/sahil-raza-863a40408"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn"
+      >
+        <FaLinkedin aria-hidden="true" />
+      </a>
 
-            <a
-              href="https://www.fiverr.com/mdsahilraza"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <SiFiverr />
-            </a>
-
-          </div>
-
-          <hr />
-
-          <p className="copyright">
-            © 2026 Sahil Raza. All Rights Reserved.
-          </p>
-
-          <p className="made">
-            Designed & Developed by Sahil Raza
-          </p>
-
-        </div>
-
-      </footer>
+      <a
+        href="https://www.fiverr.com/mdsahilraza"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Fiverr"
+      >
+        <SiFiverr aria-hidden="true" />
+      </a>
 
     </div>
-  );
+
+    <hr />
+
+    <p className="copyright">
+      © 2026 Sahil Raza. All Rights Reserved.
+    </p>
+
+    <p className="made">
+      Designed & Developed by Sahil Raza
+    </p>
+
+  </div>
+
+</footer>
+
+</main>
+
+</div>
+
+);
 }
 
 export default App;
