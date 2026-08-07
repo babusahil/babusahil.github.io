@@ -2,11 +2,11 @@ import { useState, useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import "./App.css";
 
-import sahil from "./images/sahil.jpg";
-import nike from "./images/nike.jpg";
-import pizza from "./images/pizza.jpg";
-import coffee from "./images/coffee.jpg";
-import perfume from "./images/perfume.jpg";
+import sahil from "./images/sahil.webp";
+import nike from "./images/nike.webp";
+import pizza from "./images/pizza.webp";
+import coffee from "./images/coffee.webp";
+import perfume from "./images/perfume.webp";
 
 import { FaWhatsapp, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { SiFiverr } from "react-icons/si";
