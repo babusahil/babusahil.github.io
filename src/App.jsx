@@ -556,41 +556,41 @@ useEffect(() => {
 
     <div className="testimonial-card">
 
-      <p>⭐⭐⭐⭐⭐</p>
+  <p>⭐⭐⭐⭐⭐</p>
 
-      <h3>Amit Kumar</h3>
+  <h3>Amit Kumar</h3>
 
-      <p>
-        Amazing work! Delivered on time with excellent quality.
-      </p>
+  <p>
+    Amazing work! Delivered on time with excellent quality.
+  </p>
 
-    </div>
-
-
-    <div className="testimonial-card">
-
-      <p>⭐⭐⭐⭐⭐</p>
-
-      <h4>Rohit Singh</h4>
-
-      <p>
-        Very creative designer. Highly recommended.
-      </p>
-
-    </div>
+</div>
 
 
-    <div className="testimonial-card">
+<div className="testimonial-card">
 
-      <p>⭐⭐⭐⭐⭐</p>
+  <p>⭐⭐⭐⭐⭐</p>
 
-      <h4>Priya Sharma</h4>
+  <h3>Rohit Singh</h3>
 
-      <p>
-        Professional product advertisements and motion graphics.
-      </p>
+  <p>
+    Very creative designer. Highly recommended.
+  </p>
 
-    </div>
+</div>
+
+
+<div className="testimonial-card">
+
+  <p>⭐⭐⭐⭐⭐</p>
+
+  <h3>Priya Sharma</h3>
+
+  <p>
+    Professional product advertisements and motion graphics.
+  </p>
+
+</div>
 
   </div>
 
