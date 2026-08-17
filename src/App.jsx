@@ -12,6 +12,39 @@ import { FaWhatsapp, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { SiFiverr } from "react-icons/si";
 import { TypeAnimation } from "react-type-animation";
 
+const softwareList = [
+  { name: "Adobe Photoshop", logo: "/logos/photoshop.svg" },
+  { name: "Adobe Illustrator", logo: "/logos/illustrator.svg" },
+  { name: "Adobe InDesign", logo: "/logos/indesign.svg" },
+  { name: "CorelDRAW", logo: "/logos/coreldraw.svg" },
+  { name: "Canva", logo: "/logos/canva.svg" },
+  { name: "Figma", logo: "/logos/figma.svg" },
+  { name: "Affinity Designer", logo: "/logos/affinity-designer.svg" },
+  { name: "Affinity Photo", logo: "/logos/affinity-photo.svg" },
+  { name: "Inkscape", logo: "/logos/inkscape.svg" },
+  { name: "Adobe Lightroom", logo: "/logos/lightroom.svg" },
+  { name: "Adobe After Effects", logo: "/logos/after-effects.svg" },
+  { name: "Adobe Premiere Pro", logo: "/logos/premiere-pro.svg" },
+  { name: "Adobe Animate", logo: "/logos/animate.svg" },
+  { name: "DaVinci Resolve", logo: "/logos/davinci-resolve.svg" },
+  { name: "Blender", logo: "/logos/blender.svg" },
+  { name: "Cinema 4D", logo: "/logos/cinema-4d.svg" },
+  { name: "Houdini", logo: "/logos/houdini.svg" },
+  { name: "Autodesk Maya", logo: "/logos/maya.svg" },
+  { name: "Autodesk 3ds Max", logo: "/logos/3ds-max.svg" },
+  { name: "Nuke", logo: "/logos/nuke.svg" },
+  { name: "Final Cut Pro", logo: "/logos/final-cut-pro.svg" },
+  { name: "CapCut", logo: "/logos/capcut.svg" },
+  { name: "HitFilm", logo: "/logos/hitfilm.svg" },
+  { name: "Blackmagic Fusion", logo: "/logos/fusion.svg" },
+  { name: "Adobe Audition", logo: "/logos/audition.svg" },
+  { name: "Adobe Media Encoder", logo: "/logos/media-encoder.svg" },
+  { name: "Substance 3D Painter", logo: "/logos/substance-painter.svg" },
+  { name: "Substance 3D Designer", logo: "/logos/substance-designer.svg" },
+  { name: "ZBrush", logo: "/logos/zbrush.svg" },
+  { name: "Moho", logo: "/logos/sketchup.svg" },
+];
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -112,7 +145,35 @@ useEffect(() => {
   };
 
 }, []);
+ // Idle Cursor Circle
+useEffect(() => {
+  const cursor = document.querySelector(".idle-cursor");
+  if (!cursor) return;
 
+  let timer;
+
+  const handleMouseMove = (e) => {
+    cursor.style.left = `${e.clientX}px`;
+    cursor.style.top = `${e.clientY}px`;
+
+    clearTimeout(timer);
+
+    // Mouse move करते समय circle hide
+    cursor.classList.remove("show");
+
+    // 700ms रुकने के बाद circle show
+    timer = setTimeout(() => {
+      cursor.classList.add("show");
+    }, 700);
+  };
+
+  window.addEventListener("mousemove", handleMouseMove);
+
+  return () => {
+    window.removeEventListener("mousemove", handleMouseMove);
+    clearTimeout(timer);
+  };
+}, []);
   // Loading Screen
   if (loading) {
     return (
@@ -131,6 +192,9 @@ useEffect(() => {
   }
 
   return (
+  <>
+    <div className="idle-cursor"></div>
+
     <div className="app">
 
         {/* =========================
@@ -252,13 +316,13 @@ useEffect(() => {
         </a>
 
         <a
-          href="/sahilresum.pdf"
-          download="Sahil-Raza-Resume.pdf"
-        >
-          <button type="button">
-            Download Resume
-          </button>
-        </a>
+  href="/sahilresume.pdf"
+  download="Sahil-Raza-Resume.pdf"
+  className="resume-btn"
+>
+  Download Resume
+</a>
+
 
       </div>
 
@@ -470,7 +534,62 @@ useEffect(() => {
         </div>
 
       </section>
+      {/* =========================
+          30 SOFTWARE / TOOLS
+      ========================= */}
 
+      <section
+        ref={(el) => (sectionRefs.current[7] = el)}
+        id="software"
+        className="software-section"
+      >
+        <div className="software-heading">
+          <span>My Creative Toolkit</span>
+
+          <h2>
+            Software I Use
+          </h2>
+
+          <p>
+            Professional creative software I use for graphic design,
+            motion graphics, video editing, animation and 3D design.
+          </p>
+        </div>
+
+        <div className="software-slider">
+          <div className="software-track software-track-one">
+            {softwareList.slice(0, 15).map((software) => (
+              <div className="software-card" key={software.name}>
+                <div className="software-logo">
+                  <img
+                    src={software.logo}
+                    alt={software.name}
+                  />
+                </div>
+
+                <span>{software.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="software-slider">
+          <div className="software-track software-track-two">
+            {softwareList.slice(15, 30).map((software) => (
+              <div className="software-card" key={software.name}>
+                <div className="software-logo">
+                  <img
+                    src={software.logo}
+                    alt={software.name}
+                  />
+                </div>
+
+                <span>{software.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* =========================
     SERVICES
@@ -819,9 +938,14 @@ useEffect(() => {
 
         <p>✉️ motiongraphicdesigner6@gmail.com</p>
 
-        <a href="/sahilresum.pdf" download>
-          <button>Download Resume</button>
-        </a>
+        <a
+  href="/sahilresume.pdf"
+  download="Sahil-Raza-Resume.pdf"
+  className="resume-btn"
+>
+  Download Resume
+</a>
+
 
 
         <form
@@ -974,6 +1098,7 @@ useEffect(() => {
 
 </div>
 
+</>
 );
 }
 
